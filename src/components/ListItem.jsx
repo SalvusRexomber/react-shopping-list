@@ -1,8 +1,7 @@
-import { v1 as uuidv1 } from 'uuid'
-
-export default function ListInput(props) {
+export default function ListItem(props) {
     
-    const listItem = props.items.map(itemElement => <li className="item" key={uuidv1()}>{itemElement}</li>)
+    const listItem = props.items.map(itemElement => 
+    <li className="item" key={itemElement.id}>{itemElement.text}</li>)
     
 
     return(
