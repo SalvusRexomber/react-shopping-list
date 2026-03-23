@@ -3,13 +3,14 @@ import Header from './components/Header'
 import ListInput from './components/ListInput'
 import ListItem from './components/ListItem'
 import { useState } from 'react'
+import { v1 as uuidv1 } from 'uuid'
 
 function App() {
 
   const [items, setItems] = useState([]);
 
   function addItems(item){
-    setItems([...items, item]);
+    setItems([...items, {id: uuidv1(), text: item}]);
   }
 
   return (
