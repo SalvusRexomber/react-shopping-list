@@ -13,11 +13,16 @@ function App() {
     setItems([...items, {id: uuidv1(), text: item}]);
   }
 
+  function deleteItem(id){
+    let filteredItem = (items.filter(items => items.id !== id));
+    setItems(filteredItem);
+  }
+
   return (
       <div className='app-container'>
         <Header/>
         <ListInput addItems={addItems}/>
-        <ListItem items={items}/>
+        <ListItem items={items} deleteItem={deleteItem}/>
       </div>
     )
   }
